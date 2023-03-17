@@ -9,14 +9,24 @@ const x = 6
 // 1. Write a function that takes 2 numbers as arguments and returns the sum of both numbers and the variable "x" using without using arrow functions.
 
 const summer = (num1, num2) => {
-  let x = 0
 
-  x = num1 + num2
-  return x
+
+  total = num1 + num2 + x
+  return total
 }
-console.log(summer(2,2))
+console.log()
+console.log("1)", summer(2,2))
 
 // 2. Write a function that takes 2 numbers as arguments and returns the sum of both numbers and the variable "x", using arrow functions.
+
+function oldSkoolSummer(num1, num2) {
+  let total = num1 + num2 + x
+
+  return total
+}
+
+console.log("2)", oldSkoolSummer(4,4))
+
 
 // 3. Write a function that returns another function. (use arrow functions please)
 
@@ -29,7 +39,7 @@ const createMultiplier = (multiplier=2) => {
 
 // const triple = createMultiplier(3) // the 3 is the multiplier variable
 // console.log(triple(5)) // invoking the inner function. the 5 is the num variable
-console.log(createMultiplier(5)(5, 3))
+console.log("3)", createMultiplier(5)(5))
 
 
 // 4. Given the following code explain why the function that returns from getFunction still has access to variable "y" even when "y" is not a global variable.
@@ -43,8 +53,10 @@ const getFunction = () => {
   return insideFunc;
 };
 
-console.log(getFunction()(2))
-
+// console.log(getFunction()(2))
+console.log( "4)",
+  "Answer: it's because the enclosed function has access to the scope of its enclosing function/s"
+);
 // Answer: it's because the enclosed function has access to the scope of its enclosing function/s
 
 // 5. write a function that takes "couldThrowError()" as a callback argument.
@@ -57,7 +69,7 @@ const couldThrowError = () => {
     throw new Error("Error was thrown");
   }
 
-  return "success";
+  return "5) success";
 };
 
 const enclosingFunc = (callbackFunc) => {
@@ -65,7 +77,7 @@ const enclosingFunc = (callbackFunc) => {
     const result = callbackFunc();
     console.log(result);
   } catch (error) {
-    console.log("Sorry, there was an error");
+    console.log("5)", "Sorry, there was an error");
   }
 };
 
