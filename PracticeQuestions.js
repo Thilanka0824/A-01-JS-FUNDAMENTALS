@@ -8,9 +8,28 @@ const x = 6
 
 // 1. Write a function that takes 2 numbers as arguments and returns the sum of both numbers and the variable "x" using without using arrow functions.
 
+const summer = (num1, num2) => {
+  let x = 0
+
+  x = num1 + num2
+  return x
+}
+console.log(summer(2,2))
+
 // 2. Write a function that takes 2 numbers as arguments and returns the sum of both numbers and the variable "x", using arrow functions.
 
 // 3. Write a function that returns another function. (use arrow functions please)
+
+const createMultiplier = (multiplier=2) => {
+  return (num) => { //returning a function 
+    //this function will have access to the multiplier variable because its closed over by createMultiplier
+    return num * multiplier 
+  }
+}
+
+// const triple = createMultiplier(3) // the 3 is the multiplier variable
+// console.log(triple(5)) // invoking the inner function. the 5 is the num variable
+console.log(createMultiplier(5)(5, 3))
 
 
 // 4. Given the following code explain why the function that returns from getFunction still has access to variable "y" even when "y" is not a global variable.
@@ -26,24 +45,35 @@ const getFunction = () => {
 
 console.log(getFunction()(2))
 
+// Answer: it's because the enclosed function has access to the scope of its enclosing function/s
+
 // 5. write a function that takes "couldThrowError()" as a callback argument.
 // within that function call "couldThrowError" and and log the result to the console.
 // Make sure to handle errors that could be thrown by "couldThrowError()"
 // If there is an error log "sorry, there was an error" to the console.
 
 const couldThrowError = () => {
-  
-  if(Math.ceil(Math.random() * 2) < 2){
+  if (Math.ceil(Math.random() * 2) < 2) {
     throw new Error("Error was thrown");
   }
-  
-  return 'success'
-}
 
+  return "success";
+};
 
-////////////////////////////////////////////////////////////
-//// Handling data:
-////////////////////////////////////////////////////////////
+const enclosingFunc = (callbackFunc) => {
+  try {
+    const result = callbackFunc();
+    console.log(result);
+  } catch (error) {
+    console.log("Sorry, there was an error");
+  }
+};
+
+enclosingFunc(couldThrowError);
+
+//////////////////////////////////////////////////////////
+// Handling data:
+//////////////////////////////////////////////////////////
 
 
 const userData = [
