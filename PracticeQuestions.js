@@ -6,22 +6,21 @@ const x = 6;
 
 // 1. Write a function that takes 2 numbers as arguments and returns the sum of both numbers and the variable "x" using without using arrow functions.
 
-const summer = (num1, num2) => {
-  total = num1 + num2 + x;
-  return total;
-};
-console.log();
-console.log("1)", summer(2, 2));
-
-// 2. Write a function that takes 2 numbers as arguments and returns the sum of both numbers and the variable "x", using arrow functions.
-
 function oldSkoolSummer(num1, num2) {
   let total = num1 + num2 + x;
 
   return total;
 }
 
-console.log("2)", oldSkoolSummer(4, 4));
+console.log("1)", oldSkoolSummer(4, 4));
+
+// 2. Write a function that takes 2 numbers as arguments and returns the sum of both numbers and the variable "x", using arrow functions.
+const summer = (num1, num2) => {
+  total = num1 + num2 + x;
+  return total;
+};
+console.log();
+console.log("2)", summer(2, 2));
 
 // 3. Write a function that returns another function. (use arrow functions please)
 
