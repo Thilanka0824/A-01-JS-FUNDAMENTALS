@@ -1,49 +1,43 @@
-
 ////////////////////////////////////////////////////////////
 //// JAVASCRIPT JS BASICS
 ////////////////////////////////////////////////////////////
 
-
-const x = 6
+const x = 6;
 
 // 1. Write a function that takes 2 numbers as arguments and returns the sum of both numbers and the variable "x" using without using arrow functions.
 
 const summer = (num1, num2) => {
-
-
-  total = num1 + num2 + x
-  return total
-}
-console.log()
-console.log("1)", summer(2,2))
+  total = num1 + num2 + x;
+  return total;
+};
+console.log();
+console.log("1)", summer(2, 2));
 
 // 2. Write a function that takes 2 numbers as arguments and returns the sum of both numbers and the variable "x", using arrow functions.
 
 function oldSkoolSummer(num1, num2) {
-  let total = num1 + num2 + x
+  let total = num1 + num2 + x;
 
-  return total
+  return total;
 }
 
-console.log("2)", oldSkoolSummer(4,4))
-
+console.log("2)", oldSkoolSummer(4, 4));
 
 // 3. Write a function that returns another function. (use arrow functions please)
 
-const createMultiplier = (multiplier=2) => {
-  return (num) => { //returning a function 
+const createMultiplier = (multiplier = 2) => {
+  return (num) => {
+    //returning a function
     //this function will have access to the multiplier variable because its closed over by createMultiplier
-    return num * multiplier 
-  }
-}
+    return num * multiplier;
+  };
+};
 
 // const triple = createMultiplier(3) // the 3 is the multiplier variable
 // console.log(triple(5)) // invoking the inner function. the 5 is the num variable
-console.log("3)", createMultiplier(5)(5))
-
+console.log("3)", createMultiplier(5)(5));
 
 // 4. Given the following code explain why the function that returns from getFunction still has access to variable "y" even when "y" is not a global variable.
-
 
 const getFunction = () => {
   const y = 5;
@@ -54,7 +48,8 @@ const getFunction = () => {
 };
 
 // console.log(getFunction()(2))
-console.log( "4)",
+console.log(
+  "4)",
   "Answer: it's because the enclosed function has access to the scope of its enclosing function/s"
 );
 // Answer: it's because the enclosed function has access to the scope of its enclosing function/s
@@ -87,62 +82,60 @@ enclosingFunc(couldThrowError);
 // Handling data:
 //////////////////////////////////////////////////////////
 
-
 const userData = [
   {
-    id: '111',
-    name: 'Peter',
+    id: "111",
+    name: "Peter",
     favorites: {
-      food: ['burgers', 'pizza'],
-      activites: ['basketball', "baseball"]
+      food: ["burgers", "pizza"],
+      activites: ["basketball", "baseball"],
     },
   },
   {
-    id: '222',
-    name: 'John',
+    id: "222",
+    name: "John",
     favorites: {
-      food: ['burgers', 'tacos'],
-      activites: ['football', "golf"]
+      food: ["burgers", "tacos"],
+      activites: ["football", "golf"],
     },
   },
   {
-    id: '333',
-    name: 'Mary',
+    id: "333",
+    name: "Mary",
     favorites: {
-      food: ['pizza', 'tacos', 'fried chicken'],
-      activites: ['volleyball', "softball"]
+      food: ["pizza", "tacos", "fried chicken"],
+      activites: ["volleyball", "softball"],
     },
-  }
+  },
 ];
 
 // 5. Given the data above, use ".map" to make an array of objects.
 // Each object should have the id of the user and the amount of favorite foods they have.
 // example: [{id: '111', favoriteFoods: 2}]
 
-
 // 6. Given the data above, use ".reduce" to make an array of all the names
 // of the people who have pizza as one of their favorite foods.
 // example: ['Peter', 'Mary']
 
-
 // 7. Show an an example of a switch statement being used
-
 
 ////////////////////////////////////////////////////////////
 //// OBJECT AND ARRAY DESTRUCTURING
 ////////////////////////////////////////////////////////////
 
-
 const userPersonalData = {
-  name: 'peter',
-  age: '56',
-  birthday: 'jan 1st',
- };
- const userGameData = {
+  name: "peter",
+  age: "56",
+  birthday: "jan 1st",
+};
+const userGameData = {
   score: 4546,
-  accomplishments: ['won award for being good gamer', 'won 1st win', 'got good score on the weekend'],
- };
-  
+  accomplishments: [
+    "won award for being good gamer",
+    "won 1st win",
+    "got good score on the weekend",
+  ],
+};
 
 // 8. Combine the personalData and userGameData into a user object that is equal to the object below, by using the spread operator:
 // const user = {
@@ -153,102 +146,88 @@ const userPersonalData = {
 //  accomplishments: ['won award for being good gamer', 'won 1st win', 'got good score on the weekend'],
 // }
 
-
-
-
-
 // 9. Make a copy of your new user object but override the birthday to december 31st
- 
 
 // 10. Use the spread operator to make a copy of the accomplishments array and store it in a new variable
-
-
-
 
 //  11.Given the object bellow, use object destructuring to get the favorite food value (user.name.favoriteThings.food)
 //  and store it in a variable name food
 
 var user = {
-  name: 'pete',
-  age: '32',
+  name: "pete",
+  age: "32",
   favoriteThings: {
-    food: ['pizza', 'tacos', 'burgers', 'italian'],
+    food: ["pizza", "tacos", "burgers", "italian"],
     movies: [],
   },
- };
+};
 
- 
 // 12. Once you have grabbed the favorite foods. Destructure the food array to grab only the first 2 values. //
 
-
-// 13. use object destructuring and the rest operator to transform the following array into 3 variables: name, age, and food. 
+// 13. use object destructuring and the rest operator to transform the following array into 3 variables: name, age, and food.
 //    the food variable should have all the array items starting from the third one.
-const data = ['peter', '34', 'apple', 'oranges', 'pizza', 'tacos'];
+const data = ["peter", "34", "apple", "oranges", "pizza", "tacos"];
 
-
-
-// 14. use object destructuring to grab the following from the userInfo object: 
+// 14. use object destructuring to grab the following from the userInfo object:
 // - The user's name and in a constant named userName.
 // - The user's favorite food array and name it favoriteFood.
 // - The users first favorite thing (cars) and name it favoriteThing
 // - The users second favorite thing (jewelry) and name it secondfavoriteThing
 
 const userInfo = {
-  name: 'Peter',
+  name: "Peter",
   favorites: {
     needs: {
-      food:  ['burger', 'pizza', 'tacos', 'fried chicken', 'sushi'],
+      food: ["burger", "pizza", "tacos", "fried chicken", "sushi"],
     },
     wants: {
-      things: ['cars', 'jewelry'],
+      things: ["cars", "jewelry"],
     },
   },
 };
 
-var fetchData = () => new Promise((resolve, reject) => {
-  console.log('fetchingData from imaginary database')
-  setTimeout(() => {
-       try {
-         // fetchingData from imaginary database
-         if((Math.ceil(Math.random() * 2)) < 2){
-           throw new Error('Error!')
-         }
-         resolve({name: 'john', age:42})
-        } catch(error) {
-          reject(error);
+var fetchData = () =>
+  new Promise((resolve, reject) => {
+    console.log("fetchingData from imaginary database");
+    setTimeout(() => {
+      try {
+        // fetchingData from imaginary database
+        if (Math.ceil(Math.random() * 2) < 2) {
+          throw new Error("Error!");
         }
-  }, 5000);
-});
+        resolve({ name: "john", age: 42 });
+      } catch (error) {
+        reject(error);
+      }
+    }, 5000);
+  });
 
-
-module.exports =  fetchData;
-
+module.exports = fetchData;
 
 // //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Promises:
 // //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Function that returns a promise.
-var fetchData = () => new Promise((resolve, reject) => {
-  console.log('fetchingData from imaginary database')
-  setTimeout(() => {
-       try {
-         // fetchingData from imaginary database
-         if((Math.ceil(Math.random() * 2)) < 2){
-           throw new Error('Error!')
-         }
-         resolve({name: 'john', age:42})
-        } catch(error) {
-          reject(error);
+var fetchData = () =>
+  new Promise((resolve, reject) => {
+    console.log("fetchingData from imaginary database");
+    setTimeout(() => {
+      try {
+        // fetchingData from imaginary database
+        if (Math.ceil(Math.random() * 2) < 2) {
+          throw new Error("Error!");
         }
-  }, 5000);
-});
-
+        resolve({ name: "john", age: 42 });
+      } catch (error) {
+        reject(error);
+      }
+    }, 5000);
+  });
 
 // //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 15. Call fetchData (which returns a promise) and use the .then()  method to log the value the promise resolves with to the javascript console.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 16. Call fetchData (which returns a promise) and use the async/await method to log the value the promise resolves with to the javascript console.
