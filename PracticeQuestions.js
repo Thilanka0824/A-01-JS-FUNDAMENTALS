@@ -19,7 +19,7 @@ const summer = (num1, num2) => {
   total = num1 + num2 + x;
   return total;
 };
-console.log();
+
 console.log("2)", summer(2, 2));
 
 // 3. Write a function that returns another function. (use arrow functions please)
