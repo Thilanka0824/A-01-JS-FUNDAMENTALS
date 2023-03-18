@@ -34,7 +34,7 @@ const createMultiplier = (multiplier = 2) => {
 
 // const triple = createMultiplier(3) // the 3 is the multiplier variable
 // console.log(triple(5)) // invoking the inner function. the 5 is the num variable
-console.log("3)", createMultiplier(3)(2)); //first the outer function, then the inner function
+console.log("3)", createMultiplier(3)(5)); //first the outer function, then the inner function
 
 // 4. Given the following code explain why the function that returns from getFunction still has access to variable "y" even when "y" is not a global variable.
 
