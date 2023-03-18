@@ -12,7 +12,7 @@ function oldSkoolSummer(num1, num2) {
   return total;
 }
 
-console.log("1)", oldSkoolSummer(4, 4));
+console.log("1)", oldSkoolSummer(2, 2));
 
 // 2. Write a function that takes 2 numbers as arguments and returns the sum of both numbers and the variable "x", using arrow functions.
 const summer = (num1, num2) => {
@@ -34,7 +34,7 @@ const createMultiplier = (multiplier = 2) => {
 
 // const triple = createMultiplier(3) // the 3 is the multiplier variable
 // console.log(triple(5)) // invoking the inner function. the 5 is the num variable
-console.log("3)", createMultiplier(5)(5));
+console.log("3)", createMultiplier(3)(2)); //first the outer function, then the inner function
 
 // 4. Given the following code explain why the function that returns from getFunction still has access to variable "y" even when "y" is not a global variable.
 
@@ -182,9 +182,26 @@ const userGameData = {
 //  accomplishments: ['won award for being good gamer', 'won 1st win', 'got good score on the weekend'],
 // }
 
+const combinedUser = {
+  ...userPersonalData,
+  ...userGameData,
+}
+
+console.log("9)", combinedUser)
+
 // 10. Make a copy of your new user object but override the birthday to december 31st
 
+const overriddenBirthday = {
+  ...combinedUser,
+  birthday: 'dec 31st',
+}
+console.log("10)", overriddenBirthday)
+
 // 11. Use the spread operator to make a copy of the accomplishments array and store it in a new variable
+
+const newAccomplishments = [...combinedUser.accomplishments]
+
+console.log("11)", newAccomplishments)
 
 //  12.Given the object bellow, use object destructuring to get the favorite food value (user.name.favoriteThings.food)
 //  and store it in a variable name food
@@ -197,6 +214,15 @@ var user = {
     movies: [],
   },
 };
+
+const {
+  favoriteThings: { food },
+} = user //destructuring the user object
+// looking for the favoriteThings object inside user
+// then pulling the food property from favoriteThings
+
+console.log("12)", food)
+
 
 // 13. Once you have grabbed the favorite foods. Destructure the food array to grab only the first 2 values. //
 
