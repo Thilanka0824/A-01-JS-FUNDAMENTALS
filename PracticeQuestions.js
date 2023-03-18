@@ -233,9 +233,15 @@ const [firstFood, secondFood] = food
 
 console.log("13)", "firstFood:", firstFood, "secondFood:", secondFood)
 
-// 14. use object destructuring and the rest operator to transform the following array into 3 variables: name, age, and food.
+// 14. use object (array?) destructuring and the rest operator to transform the following array into 3 variables: name, age, and food.
 //    the food variable should have all the array items starting from the third one.
 const data = ["peter", "34", "apple", "oranges", "pizza", "tacos"];
+
+const [name, age, ...foods] = data
+
+console.log("14)", name, age, foods)
+// console.log(age)
+// console.log(foods)
 
 // 15. use object destructuring to grab the following from the userInfo object:
 // - The user's name and in a constant named userName.
@@ -254,6 +260,22 @@ const userInfo = {
     },
   },
 };
+
+const {name: userName} = userInfo;
+
+const {favorites: {
+  needs: {food: favoriteFood}, 
+},
+} = userInfo
+
+const [favoriteThing, secondFavoriteThing, ...rest] = favoriteFood
+console.log("15)")
+console.log(" a)", userName)
+console.log(" b)", favoriteFood);
+console.log(" c)", favoriteThing);
+console.log(" d)", secondFavoriteThing);
+// console.log(rest)
+
 
 var fetchData = () =>
   new Promise((resolve, reject) => {
