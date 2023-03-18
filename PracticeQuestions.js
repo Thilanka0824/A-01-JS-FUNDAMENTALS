@@ -226,6 +226,10 @@ console.log("12)", food)
 
 // 13. Once you have grabbed the favorite foods. Destructure the food array to grab only the first 2 values. //
 
+const [firstFood, secondFood] = food 
+
+console.log("13)", "firstFood:", firstFood, "secondFood:", secondFood)
+
 // 14. use object destructuring and the rest operator to transform the following array into 3 variables: name, age, and food.
 //    the food variable should have all the array items starting from the third one.
 const data = ["peter", "34", "apple", "oranges", "pizza", "tacos"];
