@@ -221,7 +221,10 @@ const {
 // looking for the favoriteThings object inside user
 // then pulling the food property from favoriteThings
 
+// const { favoriteThings } = user
+
 console.log("12)", food)
+// console.log("100)", favoriteThings) // returns the entire favoriteThings object
 
 
 // 13. Once you have grabbed the favorite foods. Destructure the food array to grab only the first 2 values. //
