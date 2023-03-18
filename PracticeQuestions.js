@@ -87,7 +87,7 @@ const userData = [
     name: "Peter",
     favorites: {
       food: ["burgers", "pizza"],
-      activites: ["basketball", "baseball"],
+      activities: ["basketball", "baseball"],
     },
   },
   {
@@ -95,7 +95,7 @@ const userData = [
     name: "John",
     favorites: {
       food: ["burgers", "tacos"],
-      activites: ["football", "golf"],
+      activities: ["football", "golf"],
     },
   },
   {
@@ -103,20 +103,57 @@ const userData = [
     name: "Mary",
     favorites: {
       food: ["pizza", "tacos", "fried chicken"],
-      activites: ["volleyball", "softball"],
+      activities: ["volleyball", "softball"],
     },
   },
 ];
 
-// 5. Given the data above, use ".map" to make an array of objects.
+// 6. Given the data above, use ".map" to make an array of objects.
 // Each object should have the id of the user and the amount of favorite foods they have.
 // example: [{id: '111', favoriteFoods: 2}]
 
-// 6. Given the data above, use ".reduce" to make an array of all the names
+const returnedArr = userData.map((user)=>{
+  
+  return {
+    id: user.id,
+    favoriteFoods: user.favorites.food.length
+  }
+})
+
+console.log("6)","\n", returnedArr)
+
+// 7. Given the data above, use ".reduce" to make an array of all the names
 // of the people who have pizza as one of their favorite foods.
 // example: ['Peter', 'Mary']
 
-// 7. Show an an example of a switch statement being used
+reducedArr = userData.reduce((acc, cur) =>{
+
+  if(cur.favorites.food.includes("pizza")){
+    acc.push(cur.name)
+  }
+  return acc
+}, [])
+
+console.log("7)", reducedArr)
+// 8. Show an an example of a switch statement being used
+
+const nbaSuperstarNumber = 2
+
+switch (nbaSuperstarNumber) {
+  case 3:
+    console.log("8)", "Anthony Davis");
+    break;
+  case 24:
+    console.log("8)", "Kobe Bryant");
+    break;
+  case 30:
+    console.log("8)", "Steph Curry");
+    break;
+  case 6:
+    console.log("8)", "Lebron James");
+  default:
+    console.log("8)", "Clearly not a Superstar");
+}
 
 ////////////////////////////////////////////////////////////
 //// OBJECT AND ARRAY DESTRUCTURING
@@ -136,7 +173,7 @@ const userGameData = {
   ],
 };
 
-// 8. Combine the personalData and userGameData into a user object that is equal to the object below, by using the spread operator:
+// 9. Combine the personalData and userGameData into a user object that is equal to the object below, by using the spread operator:
 // const user = {
 //  name: 'peter',
 //  age: '56',
@@ -145,11 +182,11 @@ const userGameData = {
 //  accomplishments: ['won award for being good gamer', 'won 1st win', 'got good score on the weekend'],
 // }
 
-// 9. Make a copy of your new user object but override the birthday to december 31st
+// 10. Make a copy of your new user object but override the birthday to december 31st
 
-// 10. Use the spread operator to make a copy of the accomplishments array and store it in a new variable
+// 11. Use the spread operator to make a copy of the accomplishments array and store it in a new variable
 
-//  11.Given the object bellow, use object destructuring to get the favorite food value (user.name.favoriteThings.food)
+//  12.Given the object bellow, use object destructuring to get the favorite food value (user.name.favoriteThings.food)
 //  and store it in a variable name food
 
 var user = {
@@ -161,13 +198,13 @@ var user = {
   },
 };
 
-// 12. Once you have grabbed the favorite foods. Destructure the food array to grab only the first 2 values. //
+// 13. Once you have grabbed the favorite foods. Destructure the food array to grab only the first 2 values. //
 
-// 13. use object destructuring and the rest operator to transform the following array into 3 variables: name, age, and food.
+// 14. use object destructuring and the rest operator to transform the following array into 3 variables: name, age, and food.
 //    the food variable should have all the array items starting from the third one.
 const data = ["peter", "34", "apple", "oranges", "pizza", "tacos"];
 
-// 14. use object destructuring to grab the following from the userInfo object:
+// 15. use object destructuring to grab the following from the userInfo object:
 // - The user's name and in a constant named userName.
 // - The user's favorite food array and name it favoriteFood.
 // - The users first favorite thing (cars) and name it favoriteThing
@@ -225,9 +262,9 @@ var fetchData = () =>
   });
 
 // //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 15. Call fetchData (which returns a promise) and use the .then()  method to log the value the promise resolves with to the javascript console.
+// 16. Call fetchData (which returns a promise) and use the .then()  method to log the value the promise resolves with to the javascript console.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 16. Call fetchData (which returns a promise) and use the async/await method to log the value the promise resolves with to the javascript console.
+// 17. Call fetchData (which returns a promise) and use the async/await method to log the value the promise resolves with to the javascript console.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
