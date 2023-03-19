@@ -247,7 +247,7 @@ console.log("14)", name, age, foods)
 // - The user's name and in a constant named userName.
 // - The user's favorite food array and name it favoriteFood.
 // - The users first favorite thing (cars) and name it favoriteThing
-// - The users second favorite thing (jewelry) and name it secondfavoriteThing
+// - The users second favorite thing (jewelry) and name it secondFavoriteThing
 
 const userInfo = {
   name: "Peter",
@@ -268,7 +268,12 @@ const {favorites: {
 },
 } = userInfo
 
-const [favoriteThing, secondFavoriteThing, ...rest] = favoriteFood
+const {favorites: {
+  wants: {things: favoriteThings}
+}} = userInfo
+
+const [favoriteThing, secondFavoriteThing] = favoriteThings
+// const [favoriteThing, secondFavoriteThing, ...rest] = favoriteFood
 console.log("15)")
 console.log(" a)", userName)
 console.log(" b)", favoriteFood);
